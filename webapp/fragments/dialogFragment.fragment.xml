@@ -1,0 +1,73 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog title="{title}"  contentWidth="auto" contentHeight="auto" resizable="true" draggable="true" showHeader="true" stretch="true" class="sapUiResponsivePadding--header">
+        
+         <content>
+            <!-- Tabs Container -->
+            <IconTabBar id="tabBar">
+                <!-- Good Issue Tab -->
+                <items>
+                    <IconTabFilter id="goodIssueTab" icon="sap-icon://detail-more" text="Good Issue">
+                         <VBox>
+                            <!-- Add an editable table for Good Issue -->
+                            <Table id="goodIssueTable" items="{/goodIssueItems}">
+                                <columns>
+                                    <Column>
+                                        <Label text="Material Code" />
+                                    </Column>
+                                    <Column>
+                                        <Label text="Description" />
+                                    </Column>
+                                    <Column>
+                                        <Label text="Batch" />
+                                    </Column>
+                                    <Column>
+                                        <Label text="Type" />
+                                    </Column>
+                                    <Column>
+                                        <Label text="QTY UOM-4" />
+                                    </Column>
+                                    <Column>
+                                        <Label text="From (Sloc) - 4" />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Input value="{MaterialCode}" />
+                                            <Input value="{Description}" />
+                                            <Input value="{Batch}" />
+                                            <Input value="{Type}" />
+                                            <Input value="{QtyUOM4}" />
+                                            <Input value="{FromSloc4}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+
+                        </VBox>
+                        <HBox alignContent="SpaceBetween" class="dialog_btn">
+                        
+                            <Button text="Add Row" press="onAddRow" />
+                        <Button text="Post Confirmation" press="onPostConfirmation"/>
+                        </HBox>
+                   
+                    </IconTabFilter>
+
+                    <!-- Good Receipt Tab -->
+                    <IconTabFilter id="goodReceiptTab" icon="sap-icon://approvals" text="Good Receipt">
+                        <Button text="Post Confirmation" press="onPostConfirmation"/>
+                    </IconTabFilter>
+
+                    <!-- Other Tab -->
+                    <IconTabFilter id="otherTab" icon="sap-icon://detail-more" text="Other">
+                        <Button text="Post Confirmation" press="onPostConfirmation"/>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+
+        <beginButton>
+            <Button text="Close" press="onCloseDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

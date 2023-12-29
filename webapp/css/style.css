@@ -1,0 +1,18 @@
+/* Enter your custom styles here */
+.customDialog {
+    position: relative;
+    left: 2%;
+    padding-left: 1rem;
+    background-color: white;
+}
+
+.customCloseButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: rgb(20, 135, 244); /* Add your desired background color */
+}
+.dialog_btn{
+    display: flex;
+    justify-content: space-between;
+}
